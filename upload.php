@@ -17,9 +17,9 @@
     try {
         $fp = fopen($_FILES['f1']['tmp_name'],'rb');
 
-        echo $bucket;
-        echo $key;
-        echo $_FILES['f1']['tmp_name'];
+        echo $bucket + "<br/>";
+        echo $key + "<br/>";
+        echo $_FILES['f1']['tmp_name'] + "<br/>";
         // Upload data.
         $result = $s3->putObject([
             'Bucket' => $bucket,

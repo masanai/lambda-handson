@@ -2,11 +2,10 @@
 <head><title>Lambdaハンズオン S3アップロード完了</title><head>
 <body>
 <?php
-    echo "111111";
     require '/var/www/html/lambda-handson/vendor/autoload.php';
     use Aws\S3\S3Client;
     use Aws\S3\Exception\S3Exception;
-    echo "2222222";
+
     $bucket = $_POST["bucket"];
     $key = $_FILES['f1']['name'];
 
@@ -14,12 +13,13 @@
         'version' => 'latest',
         'region'  => 'ap-southeast-1'
     ]);
-    echo "3333333";
+
     try {
         echo "44444444";
         $fp = fopen(_FILES['f1']['tmp_name'],'rb');
 
-        echo "5555555";
+        echo $bucket;
+        echo $key;
         // Upload data.
         $result = $s3->putObject([
             'Bucket' => $bucket,

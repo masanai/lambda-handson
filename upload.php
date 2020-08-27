@@ -16,7 +16,10 @@
     ]);
     echo "3333333";
     try {
+        echo "44444444";
         $fp = fopen(_FILES['f1']['tmp_name'],'rb');
+
+        echo "5555555";
         // Upload data.
         $result = $s3->putObject([
             'Bucket' => $bucket,

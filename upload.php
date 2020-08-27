@@ -8,10 +8,9 @@
 
     $bucket = $_POST['bucket'];
     $key = date("Ymdhis") + $bucket + '.csv';
+    echo '12345';
+    echo print_r($_POST);
 
-    echo 'bucket=' + $bucket;
-    echo 'key=' + $key;
-    
     $s3 = new S3Client([
         'version' => 'latest',
         'region'  => 'ap-southeast-1'

@@ -3,7 +3,7 @@
 <body>
 <?php
     echo "111111";
-    require '/path/to/vendor/autoload.php';
+    require '/var/www/html/lambda-handson/vendor/autoload.php';
     use Aws\S3\S3Client;
     use Aws\S3\Exception\S3Exception;
     echo "2222222";

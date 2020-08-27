@@ -14,9 +14,6 @@
         'region'  => 'ap-southeast-1'
     ]);
 
-    echo var_dump($_FILES);
-    echo file_get_contents($_FILES['f1']['tmp_name']);
-
     try {
         // Upload data.
         $result = $s3->putObject([

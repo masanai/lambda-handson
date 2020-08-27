@@ -6,7 +6,7 @@
     use Aws\S3\S3Client;
     use Aws\S3\Exception\S3Exception;
 
-    $bucket = $_POST["bucket"];
+    $bucket = $_POST['bucket'];
     $key = date("Ymdhis") + $bucket + ".csv";
 
     $s3 = new S3Client([
@@ -17,9 +17,10 @@
     try {
         $fp = fopen($_FILES['f1']['tmp_name'],'rb');
 
-        echo $bucket + "<br/>";
-        echo $key + "<br/>";
-        echo $_FILES['f1']['tmp_name'] + "<br/>";
+        echo $bucket + '<br/>';
+        echo $key + '<br/>';
+        echo $_FILES['f1']['tmp_name'] + '<br/>';
+        echo '1111111<br/>';
         // Upload data.
         $result = $s3->putObject([
             'Bucket' => $bucket,

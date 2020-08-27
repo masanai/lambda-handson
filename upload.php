@@ -7,9 +7,11 @@
     use Aws\S3\Exception\S3Exception;
 
     $bucket = $_POST['bucket'];
-    $key = date("Ymdhis") + $bucket + '.csv';
-    echo '12345';
+    $key = date("Ymdhis") . $bucket . '.csv';
+
     echo print_r($_POST);
+    echo $bucket;
+    echo $key;
 
     $s3 = new S3Client([
         'version' => 'latest',

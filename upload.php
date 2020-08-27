@@ -14,7 +14,7 @@
         'region'  => 'ap-southeast-1'
     ]);
 
-    echo print_r($_FILE);
+    echo print_r($_FILES);
     echo file_get_contents($_FILES['f1']['tmp_name']);
 
     try {

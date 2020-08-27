@@ -9,23 +9,17 @@
     $bucket = $_POST['bucket'];
     $key = date("Ymdhis") . $bucket . '.csv';
 
-    echo print_r($_POST);
-    echo $bucket;
-    echo $key;
-
     $s3 = new S3Client([
         'version' => 'latest',
         'region'  => 'ap-southeast-1'
     ]);
 
     try {
-        $fp = fopen($_FILES['f1']['tmp_name'],'rb');
-    
         // Upload data.
         $result = $s3->putObject([
             'Bucket' => $bucket,
             'Key'    => $key,
-            'Body'   => $fp,
+            'Body'   => file_get_contents($_FILES['f1']['tmp_name']),
         ]);
         // Print the URL to the object.
         echo $result['ObjectURL'] . PHP_EOL;

@@ -1,2 +1,14 @@
 {
+    "Record": [
+        {
+            "s3":{
+                "bucket":{
+                    "name":"lambda-handson-masanai-input"
+                },
+                "object":{
+                    "key":"20200830021346lambda-handson-masanai-input.csv"
+                }
+            }
+        }
+    ]
 }
